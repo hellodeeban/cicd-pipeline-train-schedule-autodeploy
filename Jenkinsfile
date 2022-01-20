@@ -8,9 +8,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Running build automation'
-                sh 'chmod +x gradle'
+                sh 'chmod +x gradlew'
+                sh 'git update-index --chmod=+x gradlew'
                 sh 'whoami'
-                sh './gradle build --no-daemon'
+                sh './gradlew build --no-daemon'
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
         }
