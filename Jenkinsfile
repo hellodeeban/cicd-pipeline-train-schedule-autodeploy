@@ -9,6 +9,7 @@ pipeline {
             steps {
                 echo 'Running build automation'
                 sh 'chmod +x gradle'
+                sh 'whoami'
                 sh './gradle build --no-daemon'
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
