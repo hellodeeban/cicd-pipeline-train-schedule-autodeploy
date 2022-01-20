@@ -22,10 +22,7 @@ pipeline {
                 }
             }
         }
-        stage('Push Docker Image') {
-            when {
-                branch 'master'
-            }
+        stage('Push Docker Image') {            
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'docker_hub_login') {
@@ -35,10 +32,7 @@ pipeline {
                 }
             }
         }
-        stage('CanaryDeploy') {
-            when {
-                branch 'master'
-            }
+        stage('CanaryDeploy') {            
             environment { 
                 CANARY_REPLICAS = 1
             }
@@ -50,10 +44,7 @@ pipeline {
                 )
             }
         }
-        stage('DeployToProduction') {
-            when {
-                branch 'master'
-            }
+        stage('DeployToProduction') {            
             environment { 
                 CANARY_REPLICAS = 0
             }
