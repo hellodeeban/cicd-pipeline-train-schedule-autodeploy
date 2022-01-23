@@ -9,7 +9,7 @@ spec:
     track: canary
   ports:
   - port: 9376
-    nodePort: 31549
+    nodePort: 31540
     target-port: 8080 
     protocol: TCP 
 ---
