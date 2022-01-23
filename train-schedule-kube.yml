@@ -9,7 +9,7 @@ spec:
   ports:
   - port: 9375
     nodePort: 31550
-    target-port: 8080 
+    target-port: 8081 
     protocol: TCP  
   
 ---
@@ -36,11 +36,11 @@ spec:
       - name: train-schedule
         image: $DOCKER_IMAGE_NAME:$BUILD_NUMBER
         ports:
-        - containerPort: 8080
+        - containerPort: 8081
         livenessProbe:
           httpGet:
             path: /
-            port: 8080
+            port: 8081
           initialDelaySeconds: 15
           timeoutSeconds: 1
           periodSeconds: 10
