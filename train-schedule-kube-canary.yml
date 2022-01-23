@@ -8,7 +8,8 @@ spec:
     app: train-schedule
     track: canary
   ports:
-  - port: 8080
+  - port: 9376
+    target-port: 8080 
   
 ---
 
