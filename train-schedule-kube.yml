@@ -7,7 +7,8 @@ spec:
   selector:
     app: train-schedule
   ports:
-  - port: 8080
+  - port: 9375
+    target-port: 8080 
   
 ---
 
