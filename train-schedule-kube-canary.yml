@@ -12,9 +12,7 @@ spec:
     nodePort: 31540
     target-port: 8080 
     protocol: TCP 
-
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
